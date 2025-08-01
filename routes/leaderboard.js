@@ -1,14 +1,14 @@
 
 
+
 // const express = require("express");
 // const User = require("../models/User");
 // const router = express.Router();
 
-// // Leaderboard route with tie-breaker
 // router.get("/", async (req, res) => {
 //   try {
 //     const leaderboard = await User.find()
-//       .sort({ problemsSolved: -1, lastSolvedDate: 1 }) // main sort + tie-breaker
+//       .sort({ problemsSolved: -1, streak: -1, lastSolvedDate: 1 })
 //       .select("rollNo name problemsSolved streak lastSolvedDate");
 //     res.json(leaderboard);
 //   } catch (error) {
@@ -23,6 +23,7 @@ const express = require("express");
 const User = require("../models/User");
 const router = express.Router();
 
+// Leaderboard route
 router.get("/", async (req, res) => {
   try {
     const leaderboard = await User.find()
