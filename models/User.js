@@ -1,3 +1,5 @@
+
+
 // const mongoose = require("mongoose");
 
 // const UserSchema = new mongoose.Schema({
@@ -7,7 +9,7 @@
 //   solvedProblems: { type: [String], default: [] }, // store problem IDs
 //   problemsSolved: { type: Number, default: 0 },
 //   streak: { type: Number, default: 0 },
-//   lastSolvedDate: { type: Date, default: null },
+//   lastSolvedDate: { type: Date, default: null },  // used for tie-breaking
 //   solvedHistory: [
 //     {
 //       problemId: String,
@@ -18,6 +20,7 @@
 
 // module.exports = mongoose.model("User", UserSchema);
 
+
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
@@ -27,7 +30,7 @@ const UserSchema = new mongoose.Schema({
   solvedProblems: { type: [String], default: [] }, // store problem IDs
   problemsSolved: { type: Number, default: 0 },
   streak: { type: Number, default: 0 },
-  lastSolvedDate: { type: Date, default: null },  // used for tie-breaking
+  lastSolvedDate: { type: Date, default: null },
   solvedHistory: [
     {
       problemId: String,
